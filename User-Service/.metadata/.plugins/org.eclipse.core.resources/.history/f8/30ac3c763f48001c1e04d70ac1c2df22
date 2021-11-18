@@ -1,0 +1,30 @@
+package com.user.feign.util;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.user.model.Book;
+import com.user.model.User;
+
+
+@FeignClient(name="book-service", url="http://book-service:8383/book")
+public interface FeignService {
+	
+	@GetMapping("/hello")
+	public String book();
+	
+	@PostMapping("/add")
+	public Book addBook(@RequestBody Book book);
+	
+	@GetMapping("/getBook")
+	public List<Book> getBook();
+	
+	@GetMapping("/user/{userId}")
+	public List<Book> getBookByUserId(@PathVariable("userId") Long userId);
+
+}

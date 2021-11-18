@@ -1,0 +1,17 @@
+package com.user.model;
+
+import java.util.List;
+
+public class User {
+	
+	private int id;
+	private String fName;
+	private String lName;
+	private String adrress;
+	private String pincode;
+	
+	private List<Contact> contact ;
+	
+	private int contactId;
+
+}

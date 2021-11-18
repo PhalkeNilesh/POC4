@@ -1,0 +1,13 @@
+package com.user.service;
+
+import com.user.model.User;
+
+public class UserServiceImpl implements UserService{
+
+	@Override
+	public User getUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

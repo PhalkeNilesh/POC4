@@ -1,0 +1,73 @@
+package com.user;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.user.controller.UserContoller;
+import com.user.model.User;
+import com.user.repository.UserRepository;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.verify;
+
+
+@SpringBootTest
+class SpringBootMicroServicePoc4ApplicationTests {
+	
+	@Autowired
+	UserRepository repo;
+	
+	@Autowired
+	UserContoller con;
+	
+	
+	@Test
+	void testAllUser() {
+		Iterable<User> list = repo.findAll();
+		assertThat(list).size().isGreaterThan(0);
+		System.out.println("Success");
+	}
+
+//	@Test
+//	public void testUserRead() {
+//		User user = repo.findById(1L).get();
+//		assertEquals("NIlesh", user.getUserName());
+//		System.out.println("Success Read");
+//	}
+
+//	@Test
+//	public void testUserUpdate() {
+//		User p = repo.findById(3).get();
+//		p.setPincode(505050);
+//		userRepo.save(p);
+//		assertNotEquals(414105, repo.findById(3).get().getPincode());
+//		System.out.println("Updated Tested");
+//	}
+
+	@Test
+	public void testUsesrDelete() {
+		userRepo.deleteById(2);
+		assertThat(userRepo.existsById(2)).isFalse();
+	}
+
+	@Test
+	public void testddUser {
+		User p = new User();
+		p.setUserId(101L);
+		p.setFName("admin");
+		p.setLName("admin");
+		p.setAdrress("pune");
+		p.setPincode("411414");
+		p.setPhone("99999999");
+		assertNotNull(repo.findById(101L).get());
+	}
+	
+
+	@Test
+	void contextLoads() {
+	}
+
+}

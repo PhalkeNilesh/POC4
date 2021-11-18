@@ -1,0 +1,5 @@
+package app.user.feign.util;
+
+public interface FeignService {
+
+}

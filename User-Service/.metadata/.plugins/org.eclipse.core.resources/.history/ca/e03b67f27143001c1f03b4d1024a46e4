@@ -1,0 +1,19 @@
+package com.user.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
+	
+	private int userId;
+	private String fName;
+	private String lName;
+	private String phone;
+	private String adrress;
+	private String pincode;
+	
+	private List<Contact> contact = new ArrayList<>();
+	
+	private int contactId;
+
+}

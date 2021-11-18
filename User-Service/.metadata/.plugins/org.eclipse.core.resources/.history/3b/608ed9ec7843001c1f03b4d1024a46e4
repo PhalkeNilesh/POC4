@@ -1,0 +1,25 @@
+package com.user.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.user.model.User;
+
+public class UserServiceImpl implements UserService{
+	
+	List<User> user =List.of(new User(101,"Nilesh","Falke","898989","Sonai","414105"));
+			
+//			 new ArrayList<User>();
+	
+//	User u1=new User(101,"Nilesh","Falke","898989","Sonai","414105", null);
+//	User u2=new User(102,"Sanket","Falke","8889","Sonai","414105", null);
+//	User u3=new User(103,"Akash","Falke","9090","Sonai","414105", null);
+
+	
+	@Override
+	public User getUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

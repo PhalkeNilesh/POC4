@@ -1,0 +1,21 @@
+package com.contact.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.contact.model.Contact;
+
+public class UserServiceImpl implements ContactService{
+	
+	
+
+	@Override
+	public List<Contact> getContact(Long userId) {
+		List<Contact> list = new ArrayList<>();
+		Contact c = new Contact(1L,"nil@gmail.com","Nilesh",101L);
+		Contact c1 = new Contact(2L,"nil@gmail.com","Sanket",102L);
+		Contact c2 = new Contact(3L,"nil@gmail.com","Akash",103L);
+		return null;
+	}
+
+}
